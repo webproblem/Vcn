@@ -5,6 +5,9 @@ function Mvvm(options) {
 	Object.keys(data).forEach(function(key){
 		that._proxy(key);
 	})
+	//observer(data);
+	observe(data);
+	this.$compile = new Compile(options.el || document.body, this);
 }
 
 Mvvm.prototype = {
